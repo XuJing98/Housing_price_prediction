@@ -26,7 +26,7 @@ def pred(Beds, Baths, Cars, Area, Date, Lat, Long, Dis, NSW):
     loaded_model = joblib.load(filename)
     data = np.array([Beds, Baths, Cars, Area, Date, Lat, Long, Dis]).reshape(1,-1)
     prediction = loaded_model.predict(data)
-    return prediction.item()
+    return round(prediction.item(), 2)
 
 
 # print(pred(Beds=2, Baths=1, Cars=1, Area=200, Date=20, Lat=-33, Long=151, Dis=1.5, NSW=2154))
