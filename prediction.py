@@ -37,9 +37,9 @@ def pred(Beds, Baths, Cars, Area, Date, Lat, Long, Dis, Ptype, NSW):
     elif Ptype == 'Unit':
         data = np.array([Beds, Baths, Cars, Area, Date, Lat, Long, Dis, 0, 0, 0, 0, 1, 0, 0]).reshape(1, -1)
     elif Ptype == 'Unit: Standard':
-        data = np.array([Beds, Baths, Cars, Area, Date, Lat, Long, Dis, 0, 1, 0, 0, 0, 0, 0]).reshape(1, -1)
+        data = np.array([Beds, Baths, Cars, Area, Date, Lat, Long, Dis, 0, 0, 0, 0, 0, 1, 0]).reshape(1, -1)
     else:
-        data = np.array([Beds, Baths, Cars, Area, Date, Lat, Long, Dis, 0, 1, 0, 0, 0, 0, 0]).reshape(1, -1)
+        data = np.array([Beds, Baths, Cars, Area, Date, Lat, Long, Dis, 0, 0, 0, 0, 0, 0, 1]).reshape(1, -1)
     prediction = loaded_model.predict(data)
     return round(prediction.item(), 2)
 
